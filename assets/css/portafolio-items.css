@@ -1,0 +1,69 @@
+/* 
+? Esta hoja de estilos es exclusiva para el funcionamiento de las tarjetas o items del portafolio
+? 
+*/
+
+.card-project {
+  position: relative;
+  width: 400px;
+  background-color: #fff;
+  /* box-sizing: content-box; */
+}
+
+.img-project {
+  display: block;
+  width: 100%;
+}
+
+.img-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(23, 59, 108, 0.6);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+.img-overlay--blur {
+  backdrop-filter: blur(5px);
+}
+
+.img-overlay > * {
+  transform: translateY(20px);
+  transition: transform 0.25s;
+}
+
+.img-overlay:hover {
+  opacity: 1;
+}
+
+.img-overlay:hover > * {
+  transform: translateY(0);
+}
+
+.title-project {
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+  padding: 0 8%;
+}
+
+.description-project {
+  font-size: 1em;
+  margin-top: 0.5em;
+  padding: 0 8%;
+}
+.link-project {
+  text-decoration: none;
+  color: black;
+}
+
+.link-project > .description-project {
+}
