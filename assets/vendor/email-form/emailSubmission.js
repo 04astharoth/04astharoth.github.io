@@ -2,7 +2,6 @@ const formContactData = document.querySelector("#contact-form");
 
 async function handleSubmit(event) {
   event.preventDefault();
-  var status = document.getElementById("my-form-status");
   const form = new FormData(event.target);
 
   event.target.querySelector(".loading").classList.add("d-block");
@@ -19,10 +18,9 @@ async function handleSubmit(event) {
     .then((response) => {
       event.target.querySelector(".loading").classList.remove("d-block");
       if (response.ok) {
-        //status.innerHTML = "Thanks for your submission!";
-        event.target.querySelector(".sent-message").classList.add("d-block");
-        formContactData.reset();
+        event.target.querySelector(".sent-message").classList.add("active");
         event.target.querySelector(".sent-message").classList.add("fade-out");
+        formContactData.reset();
       } else {
         response.json().then((data) => {
           if (Object.hasOwn(data, "errors")) {
