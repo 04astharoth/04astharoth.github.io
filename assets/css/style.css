@@ -40,7 +40,7 @@ h6 {
   visibility: hidden;
   opacity: 0;
   right: 15px;
-  bottom: 15px;
+  bottom: 80px;
   z-index: 996;
   background: #149ddd;
   width: 40px;
@@ -850,6 +850,9 @@ section {
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
+.status{
+  min-height: 54px;
+}
 .contact {
   padding-bottom: 130px;
 }
@@ -958,12 +961,23 @@ section {
 }
 
 .contact .email-form .sent-message {
-  display: none;
+  visibility: hidden;
   color: #fff;
   background: #18d26e;
   text-align: center;
   padding: 15px;
   font-weight: 600;
+}
+
+.sent-message.active{
+  visibility:visible !important;
+  opacity:1;
+}
+
+.sent-message.fade-out {
+  visibility:hidden;
+  opacity:0;
+  transition:opacity 8s linear;
 }
 
 .contact .email-form .loading {
