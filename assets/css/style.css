@@ -295,11 +295,11 @@ h6 {
   }
 }
 
-@media (min-width: 1200px)  {
+@media (min-width: 1200px) {
   #hero {
     background-position: 100% 0%;
   }
-  
+
   #hero .hero-container {
     margin-left: 18%;
   }
@@ -850,9 +850,6 @@ section {
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
-.status{
-  min-height: 54px;
-}
 .contact {
   padding-bottom: 130px;
 }
@@ -961,7 +958,7 @@ section {
 }
 
 .contact .email-form .sent-message {
-  visibility: hidden;
+  display: none;
   color: #fff;
   background: #18d26e;
   text-align: center;
@@ -969,22 +966,37 @@ section {
   font-weight: 600;
 }
 
-.sent-message.active{
-  visibility:visible !important;
-  opacity:1;
-}
-
-.sent-message.fade-out {
-  visibility:hidden;
-  opacity:0;
-  transition:opacity 8s linear;
-}
-
 .contact .email-form .loading {
   display: none;
   background: #fff;
   text-align: center;
   padding: 15px;
+}
+
+.status {
+  min-height: 54px;
+}
+
+/* .sent-message.active{
+  display: inline-block;
+  opacity:1;
+} */
+
+.fade-out {
+  -webkit-animation: 3s ease 0s normal forwards 1 fadeOut;
+  animation: 3s ease 0s normal forwards 1 fadeOut;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  66% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 .contact .email-form .loading:before {
